@@ -1,0 +1,609 @@
+@import url('https://fonts.googleapis.com/css?family=Kanit');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Kanit', sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #222;
+  font-weight: 300;
+}
+
+.wrapper {
+  width: 85%;
+  margin: 25px auto;
+}
+
+header img {
+  height: 35px;
+  width: 35px;
+}
+
+header .container-logo {
+  display: flex;
+  align-items: center; /* Выравнивание элементов по вертикали */
+  justify-content: space-between; /* Разделение элементов по горизонтали */
+}
+
+header .logo-section {
+  display: flex;
+  align-items: center; /* Выравнивание элементов по вертикали */
+}
+
+header .name-logo {
+  font-size: 20px;
+  height: auto;
+  font-weight: bold;
+  margin-left: 5px;
+  color: green;
+}
+
+header ul.nav {
+  display: flex;
+  justify-content: center; /* Выравнивание элементов по горизонтали */
+  list-style: none; /* Убираем маркеры списка */
+  padding: 0; /* Убираем отступы списка */
+  margin: 0; /* Убираем внешние отступы списка */
+  flex-grow: 1; /* Растягивание навигации на всю доступную ширину */
+}
+
+.nav li {
+  cursor: pointer;
+  font-size: 20px;
+  margin: 0 30px; /* Добавляем отступы между элементами списка */
+  text-decoration: none;
+  display: inline-block; /* Чтобы псевдоэлемент был правильно позиционирован */
+  position: relative; /* Для использования псевдоэлемента */
+  color: #222;
+  opacity: 0.5;
+}
+
+.nav li:first-child {
+  margin-left: 0px; /* Убираем отступы для первого элемента */
+}
+
+.nav li:hover,
+.nav li.active {
+  opacity: 1;
+}
+
+.nav li:hover::after,
+.nav li.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -25px; /* Отступ между текстом и подчёркиванием */
+  height: 3px; /* Толщина подчёркивания */
+  background-color: green; /* Цвет подчёркивания */
+  color: red;
+}
+
+.button-section {
+  display: flex;
+  align-items: center; /* Выравнивание элементов по вертикали */
+}
+
+.icon {
+  cursor: pointer;
+  font-size: 25px; /* Увеличение размера иконок */
+  margin-right: 30px; /* Отступы между иконками */
+}
+
+.login-button {
+  display: flex;
+  align-items: center; /* Выравнивание элементов по вертикали */
+  padding: 3px 15px; /* Увеличение размера кнопки */
+  font-size: 16px; /* Увеличение размера текста кнопки */
+  background-color: green; /* Цвет кнопки */
+  color: white; /* Цвет текста кнопки */
+  border: none; /* Убираем границу кнопки */
+  border-radius: 5px; /* Скругление углов кнопки */
+  cursor: pointer; /* Изменение курсора при наведении */
+}
+
+.login-button .icon {
+  margin-right: 5px; /* Отступ между иконкой и текстом кнопки */
+}
+
+.line {
+  height: 1px;
+  width: 100%;
+  background-color: green;
+  margin-top: 23px;
+}
+
+.promo-container {
+  width: 100%;
+  height: 450px;
+  background-color: #f5f5f5;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.promo-container .promo-text {
+  width: 60%;
+  margin-left: 50px;
+}
+
+.promo-container .promo-text h2{
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.promo-container .promo-text h1{
+  font-weight: 900;
+  font-size: 70px;
+  width: 550px;
+  line-height: 1;
+}
+
+
+.promo-container .promo-text span{
+  font-weight: 900;
+  font-size: 70px;
+  width: 530px;
+  line-height: 1;
+  color: green;
+}
+
+.promo-container .promo-text p{
+  font-weight: 400;
+  font-size: 16px;
+  width: 590px;
+  color: gray;
+}
+
+.promo-container .promo-text button {
+  display: flex;
+  align-items: center; /* Выравнивание элементов по вертикали */
+  padding: 6px 22px; /* Увеличение размера кнопки */
+  font-size: 16px; /* Увеличение размера текста кнопки */
+  background-color: green; /* Цвет кнопки */
+  color: white; /* Цвет текста кнопки */
+  border: none; /* Убираем границу кнопки */
+  border-radius: 5px; /* Скругление углов кнопки */
+  cursor: pointer; /* Изменение курсора при наведении */
+  margin-top: 45px;
+}
+
+.promo-container .promo-image {
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.promo-container .promo-image img {
+  width: 518px;
+  height: 518px;
+  padding-bottom: 40px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.75fr 1fr 1fr 1fr; /* Первая колонка уже на 25% */
+  grid-template-rows: 30px 1fr 1fr 1fr 1fr 50px; /* Первая и последняя строки авто, остальные растягиваются */
+  gap: 40px;
+  width: 100%;
+  height: 1350px;
+}
+
+.sidebar {
+  grid-area: 1 / 1 / 6 / 2;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column; 
+}
+
+.sort {
+  grid-area: 1 / 2 / 2 / 5;
+  align-self: start; /* Прижать к верхней границе строки */
+  height: 30px; /* Автоматическая высота */
+}
+
+.products {
+  grid-area: 2 / 2 / 6 / 5;
+  align-self: stretch; /* Растягивается на всю оставшуюся высоту */
+}
+
+.grid-container .nav {
+  grid-area: 6 / 1 / 7 / 5;
+}
+
+.sidebar-categories {
+  padding: 10px;
+}
+
+.sidebar-price {
+  padding: 10px;
+}
+
+.sidebar-size {
+  padding: 10px;
+}
+
+.sidebar-categories .main-punkt {
+  margin-left: 10px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+  cursor: alias;
+}
+
+.sidebar-price .main-punkt {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+  cursor: alias;
+}
+
+.sidebar-size .main-punkt {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+  cursor: alias;
+}
+
+.sidebar-categories p {
+  margin-left: 25px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.sidebar-size p {
+  margin-left: 25px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.sidebar-price p {
+  margin-left: 25px;
+  margin-bottom: 10px;
+}
+
+
+
+.sidebar-categories span {
+  float: right;
+  margin-right: 15px;
+}
+
+.sidebar-size span {
+  float: right;
+  margin-right: 15px;
+}
+
+.sidebar-price span {
+  color: green;
+}
+
+.slider-container {
+  width: 100%;
+  margin-left: 25px;
+  margin-bottom: 10px;
+}
+
+
+
+.sidebar-price button {
+  margin-left: 25px;
+  display: flex;
+  align-items: center; /* Выравнивание элементов по вертикали */
+  padding: 6px 22px; /* Увеличение размера кнопки */
+  font-size: 16px; /* Увеличение размера текста кнопки */
+  background-color: green; /* Цвет кнопки */
+  color: white; /* Цвет текста кнопки */
+  border: none; /* Убираем границу кнопки */
+  border-radius: 5px; /* Скругление углов кнопки */
+  cursor: pointer; /* Изменение курсора при наведении */
+  margin-bottom: 25px;
+}
+
+.slider {
+  -webkit-appearance: none; /* Safari */
+  appearance: none;
+  width: 80%;
+  height: 5px;
+  border-radius: 5px;
+  background: transparent; /* Фон незаполненной части */
+  outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px; /* Размер круга */
+  height: 18px; /* Размер круга */
+  border-radius: 50%;
+  background: green; /* Цвет круга */
+  cursor: pointer;
+  border: 3px solid white; /* Белая рамка */
+}
+
+.slider::-moz-range-thumb {
+  width: 18px; /* Размер круга */
+  height: 18px; /* Размер круга */
+  border-radius: 50%;
+  background: green; /* Цвет круга */
+  cursor: pointer;
+  border: 4px solid white; /* Белая рамка */
+}
+
+/* Заполненная часть слайдера */
+.slider::-webkit-slider-runnable-track {
+  background: green; /* Цвет заполненной части */
+  height: 5px;
+}
+
+.slider::-moz-range-track {
+  background: green; /* Цвет заполненной части */
+  height: 5px;
+}
+
+/* Для Firefox */
+.slider:before {
+  content: '';
+  position: absolute;
+  height: 10px;
+  background: green;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+/* Позиционирование заполненной части */
+.slider::-moz-range-progress {
+  background: green; /* Цвет заполненной части */
+}
+
+.sidebar-image-container {
+  height: 470px;
+  width: 100%;
+  background: url(./img/supersale.png) center/cover no-repeat;
+  margin-top: auto;
+}
+
+.sort {
+  display: flex; /* Enable Flexbox layout */
+  justify-content: space-between; /* Distribute items with space between */
+}
+
+.sort .sort-category {
+  display: flex; /* Enable Flexbox for sort-category */
+  align-items: center; /* Центрируем элементы по вертикали */
+}
+
+.sort .sort-by {
+  display: flex;
+  align-items: center; /* Центрируем элементы по вертикали */
+}
+
+/* Стили для всех тегов p */
+.sort .sort-category p {
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 5px;
+  margin-right: 40px;
+}
+
+/* Зелёная линия при наведении */
+.sort .sort-category p:hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: green;
+  color: green;
+}
+
+.sort .sort-category p.active {
+  color: green;
+}
+
+/* Зелёная линия для активного элемента */
+.sort .sort-category p.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: green;
+}
+
+/* Убираем все стили, кроме стрелочки */
+.sort .sort-by .dropdown {
+  appearance: none; /* Убирает стандартный стиль браузера */
+  -webkit-appearance: none; /* Для Safari */
+  -moz-appearance: none; /* Для Firefox */
+  background: none; /* Убирает фон */
+  border: none; /* Убирает границы */
+  padding: 5px; /* Задаём отступы */
+  font-size: inherit; /* Наследует размер шрифта */
+  color: inherit; /* Наследует цвет текста */
+  cursor: pointer; /* Указывает, что элемент кликабельный */
+  outline: none; /* Убираем подсветку при фокусе */
+}
+
+/* Оставляем только стрелочку */
+.sort .sort-by .dropdown::after {
+  content: '\25BC'; /* Unicode символ для стрелки вниз */
+  position: absolute;
+  right: 10px; /* Расположение стрелочки */
+  pointer-events: none; /* Убираем возможность клика по стрелке */
+}
+
+.products {
+  grid-area: 2 / 2 / 6 / 5;
+  display: flex;
+  flex-wrap: wrap;
+  align-self: stretch; /* Растягивается на всю оставшуюся высоту */
+}
+
+.products .item {
+  margin-right: 60px;
+}
+
+.products .item img{
+  width: 300px;
+  height: 300px;
+}
+
+.products .item p{
+  font-size: 20px;
+}
+
+.products .item .priceT {
+  color: green;
+}
+
+.grid-container .nav {
+  grid-area: 6 / 1 / 7 / 5;
+}
+
+.grid-container .nav .nav-buttons{
+  float: right;
+}
+
+.grid-container .nav .nav-buttons button:first-child {
+  background-color: green;
+  color: white;
+}
+
+.grid-container .nav .nav-buttons button{
+  margin-right: 20px;
+  width: 30px;
+  height: 30px;
+  color:black;
+  background-color: white;
+  border-radius: 5px;
+}
+
+/* Затемнение фона */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+/* Модальное окно */
+.modal-window {
+  width: 600px;
+  position: relative;
+  margin: 10% auto;
+  background-color: white;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.modal-window .modal-window__content {
+  margin: 0 100px 0 100px;
+}
+
+.modal-window b {
+  font-size: 20px;
+  text-align: center;
+}
+
+.modal-window .modal-window__content p {
+  font-size: 18px;
+  text-align: left;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.modal-window .modal-window__content > input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  text-indent: 10px;
+}
+
+.modal-window .modal-window__content .fPassText {
+  font-size: 18px;
+  color: green;
+  width: 100%;
+  float: inline-end;
+  margin-top: 0;
+  text-align: right;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.modal-window .modal-window__content .login-button {
+  width: 100%;
+  color: white;
+  background-color: green;
+  height: 40px;
+  display: flex; /* Используем flexbox */
+  justify-content: center; /* Центрируем по горизонтали */
+  align-items: center; /* Центрируем по вертикали */
+  border-radius: 5px;
+  border: none; /* Убираем границу, если нужно */
+  cursor: pointer; /* Добавляем указатель при наведении */
+  font-size: 15px;
+}
+
+.modal-window .modal-window__content .register-button {
+  width: 100%;
+  color: white;
+  background-color: green;
+  height: 40px;
+  display: flex; /* Используем flexbox */
+  justify-content: center; /* Центрируем по горизонтали */
+  align-items: center; /* Центрируем по вертикали */
+  border-radius: 5px;
+  border: none; /* Убираем границу, если нужно */
+  cursor: pointer; /* Добавляем указатель при наведении */
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.modal-window .logSpan {
+  margin-right: 25px;
+  color: green;
+  cursor: pointer;
+}
+
+.modal-window .regSpan {
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+.close-button {
+  position: absolute;
+  top: 5px;  /* Расположение крестика сверху */
+  right: 10px; /* Расположение крестика справа */
+  border: none; /* Убираем рамку */
+  background: none; /* Убираем фон */
+  font-size: 20px; /* Размер шрифта для крестика */
+  cursor: pointer; /* Изменяем курсор на указатель */
+  text-align: center;
+  color: green;
+}
+
+
+.modal-close:hover {
+  color: red; /* Эффект при наведении */
+}
+
+
+
+
